@@ -1,10 +1,10 @@
-import Image from "next/image";
+import { Navbar } from "./components/Navbar";
 import "./page.css";
 
 export default function Home() {
     return (
-        <>
-            <h1 className="text-3xl">My Porfolio</h1>
-        </>
+        <div className="min-h-screen bg-background text-foreground">
+            <Navbar />
+        </div>
     );
 }
