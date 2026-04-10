@@ -1,6 +1,7 @@
 import { About } from "./components/About";
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
+import { Projects } from "./components/Projects";
 import { TechStack } from "./components/TechStack";
 import "./page.css";
 
@@ -11,6 +12,7 @@ export default function Home() {
             <Hero />
             <About />
             <TechStack />
+            <Projects />
         </div>
     );
 }
