@@ -1,0 +1,47 @@
+import { AnimatedSection } from "./AnimatedSection";
+import { SectionHeading } from "./SectionHeading";
+import { Code2, Layers, Zap } from "lucide-react";
+
+const highlights = [
+    { icon: Zap, title: "Performance First", desc: "Lighthouse 85+ scores across production sites. I optimize for speed and user experience." },
+    { icon: Layers, title: "Full Stack", desc: "React, Node.js, .NET, SQL Server, MongoDB — I work across the entire stack confidently." },
+    { icon: Code2, title: "Product Mindset", desc: "I translate business requirements into reliable, user-centered engineering solutions." },
+];
+
+export const About = () => (
+    <section id="about" className="section-padding md:!pt-12 !pt-3">
+        <div className="max-w-6xl mx-auto">
+            <SectionHeading label="// about" title="Engineering That Delivers" />
+
+            <div className="grid md:grid-cols-2 gap-12 items-start">
+                <AnimatedSection delay={0.1}>
+                    <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+                        Full-Stack Developer with 3+ years of experience building scalable SaaS platforms and enterprise systems.
+                        I've shipped 7+ production React applications with consistently high performance scores
+                        and designed reusable architectures that cut delivery timelines by 20%.
+                    </p>
+                    <p className="text-muted-foreground text-lg leading-relaxed">
+                        My work spans electronic billing platforms, treasury management systems, and AI-powered client solutions —
+                        always focused on measurable impact: faster onboarding, better performance, fewer regressions.
+                    </p>
+                </AnimatedSection>
+
+                <div className="grid gap-4">
+                    {highlights.map((h, i) => (
+                        <AnimatedSection key={h.title} delay={0.15 + i * 0.1}>
+                            <div className="glass rounded-xl p-5 flex gap-4 items-start glow-border hover:border-primary/30 transition-colors">
+                                <div className="p-2.5 bg-primary/10 rounded-lg text-primary shrink-0">
+                                    <h.icon className="h-5 w-5" />
+                                </div>
+                                <div>
+                                    <h3 className="font-semibold text-foreground mb-1">{h.title}</h3>
+                                    <p className="text-muted-foreground text-sm leading-relaxed">{h.desc}</p>
+                                </div>
+                            </div>
+                        </AnimatedSection>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </section>
+);
