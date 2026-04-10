@@ -7,7 +7,7 @@ const jobs = [
         role: "Full-Stack Developer",
         company: "Fuel Web Marketing",
         location: "St. Petersburg, FL",
-        period: "Nov 2024 – Present",
+        period: "Nov 2024 \u2013 Present",
         achievements: [
             "Shipped 7 React production sites with Lighthouse scores of 85+ across all metrics",
             "Designed reusable architecture cutting delivery time by ~20%",
@@ -19,7 +19,7 @@ const jobs = [
         role: "Full-Stack Developer",
         company: "Binapps S.A.S",
         location: "Manizales, Colombia",
-        period: "Jan 2023 – Nov 2024",
+        period: "Jan 2023 \u2013 Nov 2024",
         achievements: [
             "Built scalable features for a multi-tenant SaaS electronic billing platform",
             "Automated client onboarding — reduced activation time by 50%",
@@ -31,7 +31,7 @@ const jobs = [
         role: "Full-Stack Developer",
         company: "Centro Galerías Plaza de Mercado",
         location: "Manizales, Colombia",
-        period: "Jan 2022 – Dec 2022",
+        period: `Jan 2022 \u2013 Dec 2022`,
         achievements: [
             "Migrated treasury operations from Excel to a centralized web application",
             "Built real-time notification system with Socket.io",
@@ -87,7 +87,7 @@ export const Experience = () => (
                                     <GraduationCap className="h-4 w-4 text-primary" />
                                     <h3 className="text-lg font-bold text-foreground">B.S. Software Engineering</h3>
                                 </div>
-                                <p className="text-sm text-muted-foreground">Universidad Autónoma de Manizales · 2019 – 2025</p>
+                                <p className="text-sm text-muted-foreground">Universidad Autónoma de Manizales · 2019 &ndash; 2025</p>
                             </div>
                         </div>
                     </AnimatedSection>
