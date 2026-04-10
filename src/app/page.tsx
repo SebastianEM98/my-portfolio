@@ -3,6 +3,7 @@ import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 import { Projects } from "./components/Projects";
 import { TechStack } from "./components/TechStack";
+import { Experience } from "./components/Experience";
 import "./page.css";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
             <About />
             <TechStack />
             <Projects />
+            <Experience />
         </div>
     );
 }
