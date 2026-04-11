@@ -1,10 +1,12 @@
 "use client"
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { AnimatedSection } from "./AnimatedSection";
 import { SectionHeading } from "./SectionHeading";
-import { ArrowUpRight, ExternalLink, ImageIcon } from "lucide-react";
+import { ArrowUpRight, ExternalLink, ImageIcon, ChevronLeft, ChevronRight } from "lucide-react";
 import { FiGithub } from "react-icons/fi";
+import { useIsMobile } from "../hooks/use-mobile";
 
 const projects = [
     {
@@ -15,7 +17,7 @@ const projects = [
         highlights: ["Role-based access control", "Optimized stored procedures", "Automated testing pipeline"],
         github: "https://github.com/SebastianEM98",
         liveUrl: "https://up-task-frontend-amber-three.vercel.app/",
-        images: [] as string[],
+        images: ["/uptatsk-1.png", "/uptask-2.png", "/uptatsk-1.png"],
     },
     {
         title: "AI-Powered Chat Solutions",
@@ -25,7 +27,7 @@ const projects = [
         highlights: ["REST API design", "JWT authentication", "Reusable component library"],
         github: "https://github.com/SebastianEM98",
         liveUrl: undefined as string | undefined,
-        images: [] as string[],
+        images: ["/uptatsk-1.png"],
     },
     {
         title: "Treasury Management System",
@@ -51,7 +53,14 @@ const projects = [
 
 export const Projects = () => {
     const [activeTab, setActiveTab] = useState<Record<number, "details" | "preview">>({});
+    const [slideIndex, setSlideIndex] = useState<Record<number, number>>({});
+    const [slideDir, setSlideDir] = useState<Record<number, 1 | -1>>({});
+    const isMobile = useIsMobile();
+
     const getTab = (i: number) => activeTab[i] || "details";
+    const getSlide = (i: number) => slideIndex[i] || 0;
+    const getDir = (i: number) => slideDir[i] || 1;
+    const perView = isMobile ? 1 : 2;
 
     return (
         <section id="projects" className="section-padding">
@@ -145,19 +154,63 @@ export const Projects = () => {
 
                                 {/* Preview Tab */}
                                 {getTab(i) === "preview" && (
-                                    <div className="min-h-[200px] flex items-center justify-center rounded-xl border border-border/50 bg-muted/30">
-                                        {project.images.length > 0 ? (
-                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 w-full">
-                                                {project.images.map((img, idx) => (
-                                                    <img
-                                                        key={idx}
-                                                        src={img}
-                                                        alt={`${project.title} preview ${idx + 1}`}
-                                                        className="rounded-lg w-full h-auto object-cover border border-border/30"
-                                                    />
-                                                ))}
-                                            </div>
-                                        ) : (
+                                    <div className="min-h-[200px] rounded-xl border border-border/50 bg-muted/30">
+                                        {project.images.length > 0 ? (() => {
+                                            const totalSlides = Math.ceil(project.images.length / perView);
+                                            const current = getSlide(i);
+                                            const visibleImages = project.images.slice(current * perView, current * perView + perView);
+
+                                            return (
+                                                <div className="relative p-4 overflow-hidden">
+                                                    <motion.div
+                                                        key={current}
+                                                        initial={{ opacity: 0, x: getDir(i) * 60 }}
+                                                        animate={{ opacity: 1, x: 0 }}
+                                                        exit={{ opacity: 0, x: getDir(i) * -60 }}
+                                                        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                                                        className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+                                                    >
+                                                        {visibleImages.map((img, idx) => (
+                                                            <img
+                                                                key={current * perView + idx}
+                                                                src={img}
+                                                                alt={`${project.title} preview ${current * perView + idx + 1}`}
+                                                                className="rounded-lg w-full h-auto object-cover border border-border/30"
+                                                            />
+                                                        ))}
+                                                    </motion.div>
+
+                                                    {totalSlides > 1 && (
+                                                        <div className="flex items-center justify-center gap-3 mt-4">
+                                                            <button
+                                                                onClick={() => { setSlideDir(d => ({ ...d, [i]: -1 })); setSlideIndex((s) => ({ ...s, [i]: Math.max(0, current - 1) })); }}
+                                                                disabled={current === 0}
+                                                                className="p-1.5 rounded-full bg-background border border-border/50 text-muted-foreground hover:text-foreground disabled:opacity-30 transition-all"
+                                                            >
+                                                                <ChevronLeft className="h-4 w-4" />
+                                                            </button>
+                                                            <div className="flex gap-1.5">
+                                                                {Array.from({ length: totalSlides }).map((_, di) => (
+                                                                    <button
+                                                                        key={di}
+                                                                        onClick={() => { setSlideDir(d => ({ ...d, [i]: di > current ? 1 : -1 })); setSlideIndex((s) => ({ ...s, [i]: di })); }}
+                                                                        className={`h-2 rounded-full transition-all ${di === current ? "w-6 bg-primary" : "w-2 bg-muted-foreground/30"
+                                                                            }`}
+                                                                    />
+                                                                ))}
+                                                            </div>
+                                                            <button
+                                                                onClick={() => { setSlideDir(d => ({ ...d, [i]: 1 })); setSlideIndex((s) => ({ ...s, [i]: Math.min(totalSlides - 1, current + 1) })); }}
+                                                                disabled={current === totalSlides - 1}
+                                                                className="p-1.5 rounded-full bg-background border border-border/50 text-muted-foreground hover:text-foreground disabled:opacity-30 transition-all"
+                                                            >
+                                                                <ChevronRight className="h-4 w-4" />
+                                                            </button>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            );
+                                        })() : (
                                             <div className="flex flex-col items-center gap-3 text-muted-foreground py-8">
                                                 <ImageIcon className="h-10 w-10 opacity-40" />
                                                 <p className="text-sm">Preview coming soon</p>
