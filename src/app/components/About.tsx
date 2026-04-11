@@ -9,7 +9,7 @@ const highlights = [
 ];
 
 export const About = () => (
-    <section id="about" className="section-padding md:!pt-12 !pt-3">
+    <section id="about" className="section-padding md:!pt-12 !pt-3 scroll-m-20">
         <div className="max-w-6xl mx-auto">
             <SectionHeading label="// about" title="Engineering That Delivers" />
 
