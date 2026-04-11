@@ -83,8 +83,8 @@ export const Experience = () => (
                                 <div className="w-3 h-3 rounded-full bg-muted-foreground/40 mt-2 ring-4 ring-background" />
                             </div>
                             <div className="glass rounded-xl p-6 flex-1">
-                                <div className="flex items-center gap-2 mb-1">
-                                    <GraduationCap className="h-4 w-4 text-primary" />
+                                <div className="flex items-center gap-3 mb-1">
+                                    <GraduationCap className="h-5 w-5 text-primary" />
                                     <h3 className="text-lg font-bold text-foreground">B.S. Software Engineering</h3>
                                 </div>
                                 <p className="text-sm text-muted-foreground">Universidad Autónoma de Manizales · 2019 &ndash; 2025</p>
