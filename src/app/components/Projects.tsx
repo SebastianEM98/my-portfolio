@@ -1,10 +1,10 @@
 "use client"
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { AnimatedSection } from "./AnimatedSection";
 import { SectionHeading } from "./SectionHeading";
-import { ArrowUpRight, ExternalLink, ImageIcon, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowUpRight, ExternalLink, ImageIcon, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { FiGithub } from "react-icons/fi";
 import { useIsMobile } from "../hooks/use-mobile";
 
@@ -55,6 +55,7 @@ export const Projects = () => {
     const [activeTab, setActiveTab] = useState<Record<number, "details" | "preview">>({});
     const [slideIndex, setSlideIndex] = useState<Record<number, number>>({});
     const [slideDir, setSlideDir] = useState<Record<number, 1 | -1>>({});
+    const [lightbox, setLightbox] = useState<string | null>(null);
     const isMobile = useIsMobile();
 
     const getTab = (i: number) => activeTab[i] || "details";
@@ -175,7 +176,8 @@ export const Projects = () => {
                                                                 key={current * perView + idx}
                                                                 src={img}
                                                                 alt={`${project.title} preview ${current * perView + idx + 1}`}
-                                                                className="rounded-lg w-full h-auto object-cover border border-border/30"
+                                                                className="rounded-lg w-full h-auto object-cover border border-border/30 cursor-pointer hover:opacity-80 transition-opacity"
+                                                                onClick={() => setLightbox(img)}
                                                             />
                                                         ))}
                                                     </motion.div>
@@ -245,6 +247,37 @@ export const Projects = () => {
                         </AnimatedSection>
                     ))}
                 </div>
+                
+                {/* Lightbox Modal */}
+                <AnimatePresence>
+                    {lightbox && (
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+                            onClick={() => setLightbox(null)}
+                        >
+                            <button
+                                onClick={() => setLightbox(null)}
+                                className="absolute top-4 right-4 p-2 rounded-full bg-background/20 text-white hover:bg-background/40 transition-colors z-10"
+                            >
+                                <X className="h-6 w-6" />
+                            </button>
+                            <motion.img
+                                initial={{ scale: 0.9, opacity: 0 }}
+                                animate={{ scale: 1, opacity: 1 }}
+                                exit={{ scale: 0.9, opacity: 0 }}
+                                transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                                src={lightbox}
+                                alt="Project preview"
+                                className="max-w-full max-h-[90vh] rounded-xl shadow-2xl object-contain"
+                                onClick={(e) => e.stopPropagation()}
+                            />
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
         </section>
     )
