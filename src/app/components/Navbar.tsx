@@ -35,6 +35,25 @@ export const Navbar = () => {
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
+    const handleNavClick = (href: string) => {
+        const id = href.replace("#", "");
+        const element = document.getElementById(id);
+
+        setMobileOpen(false);
+
+        // wait for menu to close (animation)
+        setTimeout(() => {
+            if (!element) return;
+
+            const y = element.getBoundingClientRect().top + window.scrollY - 70;
+
+            window.scrollTo({
+                top: y,
+                behavior: "smooth",
+            });
+        }, 200);
+    };
+
     const linkClass = (href: string) => {
         const id = href.replace("#", "");
 
@@ -103,14 +122,17 @@ export const Navbar = () => {
                         className="md:hidden glass border-t border-border"
                     >
                         <div className="px-4 py-4 flex flex-col gap-1">
-                            {links.map((l) => {
-                                const id = l.href.replace("#", "");
+                            {links.map((link) => {
+                                const id = link.href.replace("#", "");
 
                                 return (
                                     <a
-                                        key={l.href}
-                                        href={l.href}
-                                        onClick={() => setMobileOpen(false)}
+                                        key={link.href}
+                                        href={link.href}
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            handleNavClick(link.href);
+                                        }}
                                         className={clsx(
                                             "px-3 py-2.5 text-sm rounded-lg transition-colors",
                                             active === id
@@ -118,7 +140,7 @@ export const Navbar = () => {
                                                 : "text-muted-foreground hover:text-foreground hover:bg-muted"
                                         )}
                                     >
-                                        {l.label}
+                                        {link.label}
                                     </a>
                                 );
                             })}
