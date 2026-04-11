@@ -33,13 +33,13 @@ export const Navbar = () => {
                 </a>
 
                 <div className="hidden md:flex items-center gap-1">
-                    {links.map((l) => (
+                    {links.map((link) => (
                         <a
-                            key={l.href}
-                            href={l.href}
+                            key={link.href}
+                            href={link.href}
                             className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted"
                         >
-                            {l.label}
+                            {link.label}
                         </a>
                     ))}
                     <div className="ml-2">

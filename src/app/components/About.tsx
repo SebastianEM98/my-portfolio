@@ -27,15 +27,15 @@ export const About = () => (
                 </AnimatedSection>
 
                 <div className="grid gap-4">
-                    {highlights.map((h, i) => (
-                        <AnimatedSection key={h.title} delay={0.15 + i * 0.1}>
+                    {highlights.map((highlight, i) => (
+                        <AnimatedSection key={highlight.title} delay={0.15 + i * 0.1}>
                             <div className="glass rounded-xl p-5 flex gap-4 items-start glow-border hover:border-primary/30 transition-colors">
                                 <div className="p-2.5 bg-primary/10 rounded-lg text-primary shrink-0">
-                                    <h.icon className="h-5 w-5" />
+                                    <highlight.icon className="h-5 w-5" />
                                 </div>
                                 <div>
-                                    <h3 className="font-semibold text-foreground mb-1">{h.title}</h3>
-                                    <p className="text-muted-foreground text-sm leading-relaxed">{h.desc}</p>
+                                    <h3 className="font-semibold text-foreground mb-1">{highlight.title}</h3>
+                                    <p className="text-muted-foreground text-sm leading-relaxed">{highlight.desc}</p>
                                 </div>
                             </div>
                         </AnimatedSection>
