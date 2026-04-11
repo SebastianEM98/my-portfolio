@@ -2,7 +2,7 @@ import { HeroAnimations } from "./HeroAnimations";
 import { ArrowDown, Send } from "lucide-react";
 
 export const Hero = () => (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden section-padding pt-32">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden section-padding pt-32">
 
         {/* Glow effect */}
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl animate-pulse-glow pointer-events-none" />
