@@ -1,10 +1,11 @@
 "use client"
 
-import { useState } from "react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { ArrowUpRight, ExternalLink, ImageIcon, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { AnimatedSection } from "./AnimatedSection";
 import { SectionHeading } from "./SectionHeading";
-import { ArrowUpRight, ExternalLink, ImageIcon, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { FiGithub } from "react-icons/fi";
 import { useIsMobile } from "../hooks/use-mobile";
 
@@ -62,6 +63,15 @@ export const Projects = () => {
     const getSlide = (i: number) => slideIndex[i] || 0;
     const getDir = (i: number) => slideDir[i] || 1;
     const perView = isMobile ? 1 : 2;
+
+    useEffect(() => {
+        const handleKey = (e: KeyboardEvent) => {
+            if (e.key === "Escape") setLightbox(null);
+        };
+
+        window.addEventListener("keydown", handleKey);
+        return () => window.removeEventListener("keydown", handleKey);
+    }, []);
 
     return (
         <section id="projects" className="section-padding">
@@ -122,20 +132,20 @@ export const Projects = () => {
                                             <div className="grid sm:grid-cols-2 gap-4 mb-4">
                                                 <div>
                                                     <h4 className="font-mono text-xs text-primary mb-2 uppercase tracking-wider">Key Features</h4>
-                                                    <ul className="space-y-1">
+                                                    <ul className="space-y-3">
                                                         {project.features.map((feature) => (
                                                             <li key={feature} className="text-sm text-muted-foreground flex items-start gap-2">
-                                                                <span className="text-primary mt-1.5 shrink-0">▸</span> {feature}
+                                                                <span className="text-primary shrink-0">▸</span> {feature}
                                                             </li>
                                                         ))}
                                                     </ul>
                                                 </div>
                                                 <div>
                                                     <h4 className="font-mono text-xs text-primary mb-2 uppercase tracking-wider">Architecture</h4>
-                                                    <ul className="space-y-1">
+                                                    <ul className="space-y-3">
                                                         {project.highlights.map((highlight) => (
                                                             <li key={highlight} className="text-sm text-muted-foreground flex items-start gap-2">
-                                                                <span className="text-primary mt-1.5 shrink-0">▸</span> {highlight}
+                                                                <span className="text-primary shrink-0">▸</span> {highlight}
                                                             </li>
                                                         ))}
                                                     </ul>
@@ -172,13 +182,20 @@ export const Projects = () => {
                                                         className="grid grid-cols-1 sm:grid-cols-2 gap-4"
                                                     >
                                                         {visibleImages.map((img, idx) => (
-                                                            <img
+                                                            <div
                                                                 key={current * perView + idx}
-                                                                src={img}
-                                                                alt={`${project.title} preview ${current * perView + idx + 1}`}
-                                                                className="rounded-lg w-full h-auto object-cover border border-border/30 cursor-pointer hover:opacity-80 transition-opacity"
-                                                                onClick={() => setLightbox(img)}
-                                                            />
+                                                                className="relative w-full aspect-[16/8]"
+                                                            >
+                                                                <Image
+                                                                    src={img}
+                                                                    alt={`${project.title} preview ${current * perView + idx + 1}`}
+                                                                    fill
+                                                                    className="rounded-lg object-cover border border-border/30 cursor-pointer hover:opacity-80 transition-opacity"
+                                                                    onClick={() => setLightbox(img)}
+                                                                    sizes="(max-width: 640px) 100vw, 50vw"
+                                                                    quality={75}
+                                                                />
+                                                            </div>
                                                         ))}
                                                     </motion.div>
 
@@ -247,7 +264,7 @@ export const Projects = () => {
                         </AnimatedSection>
                     ))}
                 </div>
-                
+
                 {/* Lightbox Modal */}
                 <AnimatePresence>
                     {lightbox && (
