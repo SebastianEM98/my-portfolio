@@ -64,10 +64,10 @@ export const Experience = () => (
                                         </div>
                                         <span className="font-mono text-xs text-muted-foreground shrink-0">{job.period}</span>
                                     </div>
-                                    <ul className="space-y-2">
+                                    <ul className="space-y-3">
                                         {job.achievements.map((a) => (
                                             <li key={a} className="text-sm text-muted-foreground flex items-start gap-2">
-                                                <span className="text-primary mt-0.5 shrink-0">▸</span> {a}
+                                                <span className="text-primary shrink-0">▸</span> {a}
                                             </li>
                                         ))}
                                     </ul>

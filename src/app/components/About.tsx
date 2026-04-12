@@ -1,12 +1,6 @@
 import { AnimatedSection } from "./AnimatedSection";
 import { SectionHeading } from "./SectionHeading";
-import { Code2, Layers, Zap } from "lucide-react";
-
-const highlights = [
-    { icon: Zap, title: "Performance First", desc: "Lighthouse 85+ scores across production sites. I optimize for speed and user experience." },
-    { icon: Layers, title: "Full Stack", desc: "React, Node.js, .NET, SQL Server, MongoDB — I work across the entire stack confidently." },
-    { icon: Code2, title: "Product Mindset", desc: "I translate business requirements into reliable, user-centered engineering solutions." },
-];
+import { aboutHighlights } from "../data/about.data";
 
 export const About = () => (
     <section id="about" className="section-padding md:!pt-12 !pt-3 scroll-m-20">
@@ -27,7 +21,7 @@ export const About = () => (
                 </AnimatedSection>
 
                 <div className="grid gap-4">
-                    {highlights.map((highlight, i) => (
+                    {aboutHighlights.map((highlight, i) => (
                         <AnimatedSection key={highlight.title} delay={0.15 + i * 0.1}>
                             <div className="glass rounded-xl p-5 flex gap-4 items-start glow-border hover:border-primary/30 transition-colors">
                                 <div className="p-2.5 bg-primary/10 rounded-lg text-primary shrink-0">

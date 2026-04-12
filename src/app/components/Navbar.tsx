@@ -5,16 +5,8 @@ import { ThemeToggle } from "./ThemeToggle";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useActiveSection } from "../hooks/useActiveSection";
+import { navbarLinks } from "../data/navbar.data";
 import clsx from "clsx";
-
-const links = [
-    { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Stack", href: "#stack" },
-    { label: "Projects", href: "#projects" },
-    { label: "Experience", href: "#experience" },
-    { label: "Contact", href: "#contact" }
-];
 
 export const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -84,7 +76,7 @@ export const Navbar = () => {
 
                 {/* Desktop */}
                 <div className="hidden md:flex items-center gap-1">
-                    {links.map((link) => (
+                    {navbarLinks.map((link) => (
                         <a
                             key={link.href}
                             href={link.href}
@@ -122,7 +114,7 @@ export const Navbar = () => {
                         className="md:hidden glass border-t border-border"
                     >
                         <div className="px-4 py-4 flex flex-col gap-1">
-                            {links.map((link) => {
+                            {navbarLinks.map((link) => {
                                 const id = link.href.replace("#", "");
 
                                 return (
