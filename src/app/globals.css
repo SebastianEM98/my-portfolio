@@ -89,14 +89,26 @@
   }
 
   .tooltip {
-    @apply absolute left-1/2 -translate-x-1/2 top-full mt-2 px-3 py-1 text-xs rounded-md bg-muted text-foreground opacity-0 translate-y-1 transition-all duration-200 pointer-events-none whitespace-nowrap;
+    @apply absolute left-1/2 top-full mt-2 px-3 py-1 text-xs rounded-md bg-muted text-foreground opacity-0 translate-y-1 transition-all duration-200 pointer-events-none whitespace-nowrap -translate-x-[20%]
+    /* mobile default */
+
+    xl:-translate-x-1/2;
+    /* desktop */
 
     transition-delay: 200ms;
   }
 
   .group:hover .tooltip {
-    opacity: 1;
-    transform: translateY(0) translateX(-50%);
+    @apply opacity-100 translate-y-0;
+
+    transform: translateY(0) translateX(-20%);
     transition-delay: 450ms;
+  }
+
+  /* override on xl */
+  @media (min-width: 1280px) {
+    .group:hover .tooltip {
+      transform: translateY(0) translateX(-50%);
+    }
   }
 }
