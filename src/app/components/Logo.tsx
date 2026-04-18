@@ -23,7 +23,7 @@ export const Logo = ({ size = "md", withTooltip = false, href, className = "" }:
         </span>
     );
 
-    const logoElement = href ? <a href={href}>{content}</a> : content;
+    const logoElement = href ? <a href={href} aria-label="Sebastian Echeverri Mejia — Home">{content}</a> : content;
 
     if (!withTooltip) return logoElement;
 

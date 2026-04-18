@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { SITE_URL } from "./lib/utils";
 import "./globals.css";
 
 const inter = Inter({
@@ -12,10 +13,52 @@ const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
+const TITLE = "Sebastian Echeverri Mejia | Full Stack Engineer";
+const DESCRIPTION = "Full Stack Engineer building scalable, production-ready web applications. React, Next.js, Node.js, .NET, TypeScript.";
+
 export const metadata: Metadata = {
-  title: "Sebastian Echeverri Mejia | Full Stack Engineer",
-  description:
-    "Full Stack Engineer building scalable, production-ready web applications. React, Next.js, Node.js, .NET, TypeScript.",
+  title: TITLE,
+  description: DESCRIPTION,
+  keywords: [
+    "Full Stack Engineer",
+    "React",
+    "Next.js",
+    "Node.js",
+    ".NET",
+    "TypeScript",
+    "Sebastian Echeverri",
+    "Software Engineer",
+    "Web Developer",
+  ],
+  authors: [{ name: "Sebastian Echeverri Mejia", url: SITE_URL }],
+
+  alternates: {
+    canonical: SITE_URL,
+  },
+
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    title: TITLE,
+    description: DESCRIPTION,
+    siteName: "Sebastian Echeverri Mejia",
+    images: [
+      {
+        url: `${SITE_URL}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: "Sebastian Echeverri Mejia — Full Stack Engineer",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [`${SITE_URL}/opengraph-image`],
+    creator: "@sebastianEM98",
+  },
 
   appleWebApp: {
     title: "Sebastian Echeverri",
@@ -26,14 +69,33 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Sebastian Echeverri Mejia",
+  jobTitle: "Full Stack Engineer",
+  url: SITE_URL,
+  sameAs: [
+    "https://github.com/SebastianEM98",
+    "https://www.linkedin.com/in/sebastianem98/",
+  ],
+  knowsAbout: ["React", "Next.js", "Node.js", "Express", ".NET", "TypeScript", "JavaScript", "C#", "Full Stack Development"],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`font-sans antialiased dark ${inter.variable} ${jetBrainsMono.variable} `}>
-      <body>{children}</body>
+    <html lang="en" className={`font-sans antialiased dark ${inter.variable} ${jetBrainsMono.variable}`} data-scroll-behavior="smooth">
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

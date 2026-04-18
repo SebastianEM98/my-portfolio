@@ -6,10 +6,11 @@ import { useEffect } from "react";
 
 type LightboxProps = {
     image: string | null;
+    alt?: string;
     onClose: () => void;
 }
 
-export const Lightbox = ({ image, onClose }: LightboxProps) => {
+export const Lightbox = ({ image, alt = "Project preview", onClose }: LightboxProps) => {
     useEffect(() => {
         const handleKey = (e: KeyboardEvent) => {
             if (e.key === "Escape") onClose();
@@ -49,7 +50,7 @@ export const Lightbox = ({ image, onClose }: LightboxProps) => {
                         exit={{ scale: 0.9, opacity: 0 }}
                         transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
                         src={image}
-                        alt="Project preview"
+                        alt={alt}
                         className="max-w-full max-h-[90vh] rounded-xl shadow-2xl object-contain"
                         onClick={(e) => e.stopPropagation()}
                     />
