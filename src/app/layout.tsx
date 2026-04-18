@@ -14,7 +14,16 @@ const jetBrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Sebastian Echeverri Mejia | Full Stack Engineer",
-  description: "Full Stack Engineer building scalable, production-ready web applications. React, Next.js, Node.js, .NET, TypeScript.",
+  description:
+    "Full Stack Engineer building scalable, production-ready web applications. React, Next.js, Node.js, .NET, TypeScript.",
+
+  appleWebApp: {
+    title: "Sebastian Echeverri",
+    capable: true,
+    statusBarStyle: "black-translucent",
+  },
+
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({

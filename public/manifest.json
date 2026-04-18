@@ -1,0 +1,23 @@
+{
+  "name": "Sebastian Echeverri",
+  "short_name": "Sebastian",
+  "description": "Full Stack Engineer building scalable, production-ready web applications. React, Next.js, Node.js, .NET, TypeScript.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#15181e",
+  "background_color": "#15181e",
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
