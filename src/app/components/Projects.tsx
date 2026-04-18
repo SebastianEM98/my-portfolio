@@ -9,7 +9,8 @@ export const Projects = () => {
                 <SectionHeading
                     label="// projects"
                     title="What I've Built"
-                    description="Real systems solving real problems — each designed for scale and reliability."
+                    description="From full-stack SaaS platforms to AI-powered interfaces — built for scalability and performance."
+                    descriptionClassName="max-w-4xl"
                 />
 
                 <div className="grid gap-6">

@@ -59,6 +59,11 @@ export const ProjectCard = ({ project, index: i }: ProjectCardProps) => {
                 {getTab(i) === "details" && (
                     <div className="flex flex-col lg:flex-row lg:items-start gap-6">
                         <div className="flex-1 min-w-0">
+                            
+                            {project.type && (
+                                <p className="font-mono text-xs text-primary mb-3">{project.type}</p>
+                            )}
+
                             <div className="flex items-start justify-between gap-4 mb-3">
                                 <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                                     {project.title}
@@ -87,7 +92,7 @@ export const ProjectCard = ({ project, index: i }: ProjectCardProps) => {
                                     </ul>
                                 </div>
                                 <div>
-                                    <h4 className="font-mono text-xs text-primary mb-2 uppercase tracking-wider">Architecture</h4>
+                                    <h4 className="font-mono text-xs text-primary mb-2 uppercase tracking-wider">Engineering</h4>
                                     <ul className="space-y-3">
                                         {project.highlights.map((highlight) => (
                                             <li key={highlight} className="text-sm text-muted-foreground flex items-start gap-2">

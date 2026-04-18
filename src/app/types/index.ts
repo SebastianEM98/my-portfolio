@@ -28,6 +28,7 @@ export type TechStackCategories = {
 // PROJECTS
 export type Project = {
     title: string;
+    type?: string;
     problem: string;
     features: string[];
     stack: string[];
