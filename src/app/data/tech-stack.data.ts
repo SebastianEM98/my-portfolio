@@ -3,18 +3,18 @@ import { TechStackCategories } from "../types";
 export const techStackCategories: TechStackCategories[] = [
     {
         title: "Frontend",
-        techs: ["React", "TypeScript", "Next.js", "Redux", "TanStack Query", "Tailwind CSS", "Sass", "Material UI"],
+        techs: ["React", "Next.js", "TypeScript", "JavaScript", "Redux", "TanStack Query", "Tailwind CSS", "Material UI", "Sass", "CSS"],
     },
     {
         title: "Backend",
-        techs: ["Node.js", "Express", ".NET", "Entity Framework", "REST APIs", "JWT", "Socket.io"],
+        techs: ["Node.js", "Express", ".NET", "ASP.NET Core", "Prisma", "Entity Framework", "Sequelize", "REST APIs", "JWT", "Socket.io"],
     },
     {
         title: "Databases",
-        techs: ["SQL Server", "MongoDB", "PostgreSQL"],
+        techs: ["MongoDB", "SQL Server", "PostgreSQL", "MySQL"],
     },
     {
         title: "DevOps & Tools",
-        techs: ["Microsoft Azure", "Vercel", "Git", "GitHub", "Azure DevOps", "Jest", "xUnit", "Figma"],
+        techs: ["Microsoft Azure", "AWS", "Vercel", "Git", "GitHub", "Azure DevOps", "OpenRouter", "Jest", "Vitest", "xUnit", "Figma"],
     },
 ];

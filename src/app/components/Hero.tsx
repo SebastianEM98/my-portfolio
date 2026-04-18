@@ -26,9 +26,9 @@ export const Hero = () => (
                 </h1>
 
                 {/* Description */}
-                <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed">
-                    I build scalable, production-ready web applications that solve real problems.
-                    From performant frontends to robust APIs — I ship software that works at scale.
+                <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto mb-10 leading-relaxed tracking-tight">
+                    I build scalable SaaS and enterprise web applications with a focus on performance, architecture, and real business impact.
+                    From high-performance frontends to robust APIs — I ship systems that scale and deliver measurable results.
                 </p>
 
                 {/* Buttons */}

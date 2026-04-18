@@ -38,6 +38,16 @@ export type Project = {
 }
 
 
+// EXPERIENCE
+export type jobExperience = {
+    role: string;
+    company: string;
+    location: string;
+    period: string;
+    achievements: string[];
+}
+
+
 // CONTACT LINKS
 export type ContactLink = {
     icon: IconType | ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>;

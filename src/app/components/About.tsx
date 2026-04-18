@@ -10,13 +10,13 @@ export const About = () => (
             <div className="grid md:grid-cols-2 gap-12 items-start">
                 <AnimatedSection delay={0.1}>
                     <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                        Full-Stack Developer with 3+ years of experience building scalable SaaS platforms and enterprise systems.
-                        I've shipped 7+ production React applications with consistently high performance scores
-                        and designed reusable architectures that cut delivery timelines by 20%.
+                        I'm a Full Stack Engineer with experience building scalable SaaS platforms and enterprise systems.
+                    </p>
+                    <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+                        I specialize in designing clean architectures, optimizing performance, and translating complex business requirements into reliable, user-focused applications.
                     </p>
                     <p className="text-muted-foreground text-lg leading-relaxed">
-                        My work spans electronic billing platforms, treasury management systems, and AI-powered client solutions —
-                        always focused on measurable impact: faster onboarding, better performance, fewer regressions.
+                        Throughout my career, I've improved product quality, reduced delivery times, and built systems that support real-world operations at scale.
                     </p>
                 </AnimatedSection>
 
