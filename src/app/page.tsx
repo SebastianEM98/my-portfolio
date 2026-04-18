@@ -4,13 +4,12 @@ import { Navbar } from "./components/Navbar";
 import { Projects } from "./components/Projects";
 import { TechStack } from "./components/TechStack";
 import { Experience } from "./components/Experience";
-import "./page.css";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 
 export default function Home() {
     return (
-        <div className="min-h-screen bg-background text-foreground">
+        <main className="min-h-screen bg-background text-foreground">
             <Navbar />
             <Hero />
             <About />
@@ -19,6 +18,6 @@ export default function Home() {
             <Experience />
             <Contact />
             <Footer />
-        </div>
+        </main>
     );
 }

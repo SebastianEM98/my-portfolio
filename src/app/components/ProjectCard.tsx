@@ -20,7 +20,7 @@ export const ProjectCard = ({ project, index: i }: ProjectCardProps) => {
     const [activeTab, setActiveTab] = useState<Record<number, "details" | "preview">>({});
     const [slideIndex, setSlideIndex] = useState<Record<number, number>>({});
     const [slideDir, setSlideDir] = useState<Record<number, 1 | -1>>({});
-    const [lightbox, setLightbox] = useState<string | null>(null);
+    const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
 
     const isMobile = useIsMobile();
     const perView = isMobile ? 1 : 2;
@@ -72,6 +72,7 @@ export const ProjectCard = ({ project, index: i }: ProjectCardProps) => {
                                     href={project.github ? project.github : project.liveUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    aria-label={`View ${project.title} on ${project.github ? "GitHub" : "live site"} (opens in new tab)`}
                                     className="shrink-0 text-muted-foreground hover:text-primary transition-colors"
                                 >
                                     <ArrowUpRight className="h-5 w-5" />
@@ -142,7 +143,7 @@ export const ProjectCard = ({ project, index: i }: ProjectCardProps) => {
                                                     alt={`${project.title} preview ${current * perView + idx + 1}`}
                                                     fill
                                                     className="rounded-lg object-cover border border-border/30 cursor-pointer hover:opacity-80 transition-opacity"
-                                                    onClick={() => setLightbox(img)}
+                                                    onClick={() => setLightbox({ src: img, alt: `${project.title} preview ${current * perView + idx + 1}` })}
                                                     sizes="(max-width: 640px) 100vw, 50vw"
                                                     quality={75}
                                                 />
@@ -155,6 +156,7 @@ export const ProjectCard = ({ project, index: i }: ProjectCardProps) => {
                                             <button
                                                 onClick={() => { setSlideDir(d => ({ ...d, [i]: -1 })); setSlideIndex((s) => ({ ...s, [i]: Math.max(0, current - 1) })); }}
                                                 disabled={current === 0}
+                                                aria-label="Previous images"
                                                 className="p-1.5 rounded-full bg-background border border-border/50 text-muted-foreground hover:text-foreground disabled:opacity-30 transition-all"
                                             >
                                                 <ChevronLeft className="h-4 w-4" />
@@ -164,6 +166,8 @@ export const ProjectCard = ({ project, index: i }: ProjectCardProps) => {
                                                     <button
                                                         key={di}
                                                         onClick={() => { setSlideDir(d => ({ ...d, [i]: di > current ? 1 : -1 })); setSlideIndex((s) => ({ ...s, [i]: di })); }}
+                                                        aria-label={`Go to slide ${di + 1} of ${totalSlides}`}
+                                                        aria-current={di === current ? "true" : undefined}
                                                         className={`h-2 rounded-full transition-all ${di === current ? "w-6 bg-primary" : "w-2 bg-muted-foreground/30"
                                                             }`}
                                                     />
@@ -172,6 +176,7 @@ export const ProjectCard = ({ project, index: i }: ProjectCardProps) => {
                                             <button
                                                 onClick={() => { setSlideDir(d => ({ ...d, [i]: 1 })); setSlideIndex((s) => ({ ...s, [i]: Math.min(totalSlides - 1, current + 1) })); }}
                                                 disabled={current === totalSlides - 1}
+                                                aria-label="Next images"
                                                 className="p-1.5 rounded-full bg-background border border-border/50 text-muted-foreground hover:text-foreground disabled:opacity-30 transition-all"
                                             >
                                                 <ChevronRight className="h-4 w-4" />
@@ -214,7 +219,7 @@ export const ProjectCard = ({ project, index: i }: ProjectCardProps) => {
             </div>
 
             {/* Lightbox Modal */}
-            <Lightbox image={lightbox} onClose={() => setLightbox(null)} />
+            <Lightbox image={lightbox?.src ?? null} alt={lightbox?.alt} onClose={() => setLightbox(null)} />
 
         </AnimatedSection>
     )
