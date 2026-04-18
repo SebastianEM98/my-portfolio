@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+# Sebastian Echeverri Mejia — Portfolio
 
-First, run the development server:
+**A modern, production-grade personal portfolio built with Next.js App Router**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+[![Next.js](https://img.shields.io/badge/Next.js_15-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_v3-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
+
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
+[![License](https://img.shields.io/badge/License-MIT-22c55e?style=for-the-badge)](LICENSE)
+
+[🌐 Live Demo](https://sebastianecheverri.vercel.app) · [📄 CV / Resume](https://sebastianecheverri.vercel.app/#experience) · [📬 Contact](https://sebastianecheverri.vercel.app/#contact)
+
+</div>
+
+---
+
+## ✨ Features
+
+| Feature | Description |
+|---|---|
+| ⚡ **Modern UI** | Clean, production-grade interface with a dark-first design system |
+| 🎨 **Dark-first Design** | Carefully crafted dark theme with consistent color tokens via CSS variables |
+| 🎬 **Smooth Animations** | Scroll-triggered reveals and transitions powered by Framer Motion |
+| 📱 **Fully Responsive** | Mobile-first layout that works seamlessly across all screen sizes |
+| 🧭 **Active Section Tracking** | Scroll-based navigation that highlights the current section in real time |
+| 🌙 **Optimized Dark Mode** | Native dark mode handling — no flash, no flicker |
+| 🖼️ **Project Gallery & Lightbox** | Interactive project previews with a full-screen lightbox experience |
+| 📦 **Optimized Performance** | Next.js image optimization, code splitting, and fast page loads |
+| 🔍 **SEO Ready** | Metadata, Open Graph tags, and semantic HTML for full search engine visibility |
+
+---
+
+## 🛠️ Tech Stack
+
+### Core
+
+[![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+
+### Animations & UI
+
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white)](https://www.framer.com/motion/)
+[![Lucide Icons](https://img.shields.io/badge/Lucide_Icons-F56565?style=flat-square&logo=lucide&logoColor=white)](https://lucide.dev/)
+[![React Icons](https://img.shields.io/badge/React_Icons-E91E63?style=flat-square&logo=react&logoColor=white)](https://react-icons.github.io/react-icons/)
+
+### Tooling & Deployment
+
+[![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)](https://vercel.com/)
+[![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=flat-square&logo=eslint&logoColor=white)](https://eslint.org/)
+[![Prettier](https://img.shields.io/badge/Prettier-F7B93E?style=flat-square&logo=prettier&logoColor=black)](https://prettier.io/)
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+└── app/
+    ├── components/
+    │   ├── ui/                      # Reusable UI primitives
+    │   ├── About.tsx
+    │   ├── AnimatedSection.tsx      # Scroll-triggered animation wrapper
+    │   ├── Contact.tsx
+    │   ├── Experience.tsx
+    │   ├── Footer.tsx
+    │   ├── Hero.tsx
+    │   ├── HeroAnimations.tsx
+    │   ├── Lightbox.tsx             # Full-screen image lightbox
+    │   ├── Logo.tsx
+    │   ├── Navbar.tsx
+    │   ├── ProjectCard.tsx
+    │   ├── Projects.tsx
+    │   ├── SectionHeading.tsx
+    │   ├── TechStack.tsx
+    │   └── ThemeToggle.tsx
+    ├── data/                        # Static content (projects, experience...)
+    ├── hooks/                       # Custom React hooks
+    ├── lib/                         # Utilities (cn, etc.)
+    ├── types/                       # TypeScript type definitions
+    ├── globals.css                  # Global styles and CSS variables
+    ├── layout.tsx                   # Root layout with metadata and theme setup
+    ├── opengraph-image.tsx          # Dynamic OG image generation
+    ├── page.tsx                     # Main page — composes all sections
+    ├── robots.ts                    # SEO robots config
+    └── sitemap.ts                   # Auto-generated sitemap
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📐 Design Decisions
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **App Router** — Used Next.js App Router for clean layouts, native metadata support, and better SEO control compared to Pages Router.
+- **Dark-first** — The color system is built dark by default. CSS variables handle all theming tokens, making future changes trivial.
+- **`cn()` utility** — `clsx` + `tailwind-merge` combo for clean, conflict-free conditional class merging across all components.
+- **Framer Motion (`motion`)** — Scroll-triggered animations via a reusable `AnimatedSection` wrapper, keeping animation logic decoupled from content.
+- **No UI library** — All components are built from scratch to keep the bundle lean and the design fully custom.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📬 Contact
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Feel free to reach out if you want to collaborate, hire, or just say hi.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+[![Email](https://img.shields.io/badge/Email-sebastianecheverri.dev%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:sebastianecheverri.dev@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-sebastianem98-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/sebastianem98)
+[![GitHub](https://img.shields.io/badge/GitHub-SebastianEM98-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/SebastianEM98)
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<div align="center">
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Designed & built by **Sebastian Echeverri Mejia** · © 2025
+
+</div>
