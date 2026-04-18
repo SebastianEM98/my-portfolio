@@ -17,7 +17,7 @@ export const Contact = () => (
                             rel="noopener noreferrer"
                             className="glass rounded-xl p-5 flex flex-col items-center gap-3 group hover:border-primary/30 transition-all glow-border"
                         >
-                            <div className="p-3 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                            <div className="p-3 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                                 <link.icon className="h-5 w-5" />
                             </div>
                             <div>

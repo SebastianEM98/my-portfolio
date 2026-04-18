@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { SITE_URL } from "./lib/utils";
 import "./globals.css";
 
 const inter = Inter({
@@ -12,12 +13,8 @@ const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
-// Update SITE_URL to your actual deployed domain
-const SITE_URL = "https://sebastianecheverrimejia.dev";
-
 const TITLE = "Sebastian Echeverri Mejia | Full Stack Engineer";
-const DESCRIPTION =
-  "Full Stack Engineer building scalable, production-ready web applications. React, Next.js, Node.js, .NET, TypeScript.";
+const DESCRIPTION = "Full Stack Engineer building scalable, production-ready web applications. React, Next.js, Node.js, .NET, TypeScript.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -80,9 +77,9 @@ const jsonLd = {
   url: SITE_URL,
   sameAs: [
     "https://github.com/SebastianEM98",
-    "https://www.linkedin.com/in/sebastian-echeverri-mejia",
+    "https://www.linkedin.com/in/sebastianem98/",
   ],
-  knowsAbout: ["React", "Next.js", "Node.js", ".NET", "TypeScript", "Full Stack Development"],
+  knowsAbout: ["React", "Next.js", "Node.js", "Express", ".NET", "TypeScript", "JavaScript", "C#", "Full Stack Development"],
 };
 
 export default function RootLayout({
@@ -91,7 +88,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`font-sans antialiased dark ${inter.variable} ${jetBrainsMono.variable} `}>
+    <html lang="en" className={`font-sans antialiased dark ${inter.variable} ${jetBrainsMono.variable}`} data-scroll-behavior="smooth">
       <body>
         <script
           type="application/ld+json"
