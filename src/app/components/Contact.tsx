@@ -6,7 +6,7 @@ import { contactLinks } from "../data/contact.data";
 export const Contact = () => (
     <section id="contact" className="section-padding">
         <div className="max-w-4xl mx-auto text-center">
-            <SectionHeading label="// contact" title="Let's Build Something" description="I'm open to full-time roles, freelance work, and interesting collaborations. If you're building something meaningful or need help scaling your product — let's talk." />
+            <SectionHeading label="// contact" title="Let's Build Something" description="I'm open to full-time roles, freelance work, and interesting collaborations. If you're building something meaningful or need help scaling your product — let's talk." descriptionClassName="max-w-full" />
 
             <div className="grid sm:grid-cols-3 gap-5 mb-10">
                 {contactLinks.map((link, i) => (
