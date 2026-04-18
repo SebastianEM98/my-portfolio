@@ -7,7 +7,7 @@ export const techStackCategories: TechStackCategories[] = [
     },
     {
         title: "Backend",
-        techs: ["Node.js", "Express", ".NET", "ASP.NET Core", "Prisma", "Entity Framework", "Sequelize", "REST APIs", "JWT", "Socket.io"],
+        techs: ["Node.js", "Express", ".NET", "ASP.NET Core", "Prisma", "Entity Framework", "Sequelize", "REST APIs", "JWT"],
     },
     {
         title: "Databases",

@@ -1,20 +1,25 @@
-import { Code2, Layers, Zap } from "lucide-react";
+import { Code2, Layers, Zap, BarChart } from "lucide-react";
 import { AboutHighlight } from "../types";
 
 export const aboutHighlights: AboutHighlight[] = [
     {
         icon: Zap,
         title: "Performance First",
-        desc: "Lighthouse 85+ scores across production sites. I optimize for speed and user experience."
+        desc: "High-performance applications with strong Lighthouse scores and optimized user experience across production systems."
     },
     {
         icon: Layers,
         title: "Full Stack",
-        desc: "React, Node.js, .NET, SQL Server, MongoDB — I work across the entire stack confidently."
+        desc: "React, Node.js, Express, .NET, SQL Server, PostgreSQL, MongoDB — building and scaling systems across the full stack."
     },
     {
         icon: Code2,
         title: "Product Mindset",
-        desc: "I translate business requirements into reliable, user-centered engineering solutions."
+        desc: "I build with the end user and business goals in mind, not just the code — focusing on impact and usability."
+    },
+    {
+        icon: BarChart,
+        title: "Engineering Impact",
+        desc: "Focused on delivering measurable results — improving performance, reducing delivery time, and scaling systems."
     }
 ];

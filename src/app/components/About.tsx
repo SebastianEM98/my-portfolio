@@ -13,10 +13,10 @@ export const About = () => (
                         I'm a Full Stack Engineer with experience building scalable SaaS platforms and enterprise systems.
                     </p>
                     <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                        I specialize in designing clean architectures, optimizing performance, and translating complex business requirements into reliable, user-focused applications.
+                        I specialize in designing clean architectures, optimizing performance, and translating complex business requirements into reliable, user-focused applications. Throughout my career, I've improved product quality, reduced delivery times, and built systems that support real-world operations at scale.
                     </p>
                     <p className="text-muted-foreground text-lg leading-relaxed">
-                        Throughout my career, I've improved product quality, reduced delivery times, and built systems that support real-world operations at scale.
+                        Outside of engineering, I'm passionate about sports — especially tennis — which has shaped my mindset around discipline, consistency, and continuous improvement. I bring that same energy into my work: always learning, always iterating, and always looking for better ways to build and collaborate.
                     </p>
                 </AnimatedSection>
 
