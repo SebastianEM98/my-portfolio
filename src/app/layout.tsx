@@ -13,8 +13,8 @@ const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
-const TITLE = "Sebastian Echeverri Mejia | Full Stack Engineer";
-const DESCRIPTION = "Full Stack Engineer building scalable, production-ready web applications. React, Next.js, Node.js, .NET, TypeScript.";
+const TITLE = "Sebastian Echeverri | Full Stack Engineer Portfolio";
+const DESCRIPTION = "Sebastian Echeverri is a Full Stack Engineer building scalable web applications with React, Next.js, Node.js, and TypeScript. Explore projects, experience, and contact information.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -24,10 +24,15 @@ export const metadata: Metadata = {
     "React",
     "Next.js",
     "Node.js",
+    "Express",
     ".NET",
     "TypeScript",
+    "JavaScript",
+    "C#",
     "Sebastian Echeverri",
     "Software Engineer",
+    "Software Developer",
+    "Full Stack Developer",
     "Web Developer",
   ],
   authors: [{ name: "Sebastian Echeverri Mejia", url: SITE_URL }],
@@ -67,6 +72,10 @@ export const metadata: Metadata = {
   },
 
   manifest: "/manifest.json",
+
+  verification: {
+    google: "o3OBqFZAPd7S6DGvb9eNLx9jdiej21JGpy7ZDX_6W20"
+  }
 };
 
 const jsonLd = {
@@ -79,7 +88,7 @@ const jsonLd = {
     "https://github.com/SebastianEM98",
     "https://www.linkedin.com/in/sebastianem98/",
   ],
-  knowsAbout: ["React", "Next.js", "Node.js", "Express", ".NET", "TypeScript", "JavaScript", "C#", "Full Stack Development"],
+  knowsAbout: ["React", "Next.js", "Node.js", "Express", ".NET", "TypeScript", "JavaScript", "C#", "PostgreSQL", "SQL Server", "MongoDB","Full Stack Development"],
 };
 
 export default function RootLayout({
