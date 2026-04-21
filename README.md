@@ -12,7 +12,7 @@
 [![Deployed on Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 [![License](https://img.shields.io/badge/License-MIT-22c55e?style=for-the-badge)](LICENSE)
 
-[🌐 Live Demo](https://sebastianecheverri.vercel.app) · [📄 CV / Resume](https://sebastianecheverri.vercel.app/#experience) · [📬 Contact](https://sebastianecheverri.vercel.app/#contact)
+[🌐 Live Demo](https://sebastianecheverri.dev) · [📄 CV / Resume](https://sebastianecheverri.dev/#experience) · [📬 Contact](https://sebastianecheverri.dev/#contact)
 
 </div>
 
