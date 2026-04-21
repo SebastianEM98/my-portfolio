@@ -8,6 +8,12 @@
   "background_color": "#15181e",
   "icons": [
     {
+      "src": "/social-share.jpg",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
       "src": "/web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",

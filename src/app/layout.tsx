@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     siteName: "Sebastian Echeverri Mejia",
     images: [
       {
-        url: `${SITE_URL}/opengraph-image`,
+        url: `${SITE_URL}/social-share.jpg`,
         width: 1200,
         height: 630,
         alt: "Sebastian Echeverri Mejia — Full Stack Engineer",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: [`${SITE_URL}/opengraph-image`],
+    images: [`${SITE_URL}/social-share.jpg`],
     creator: "@sebastianEM98",
   },
 
