@@ -17,6 +17,8 @@ const TITLE = "Sebastian Echeverri | Full Stack Engineer Portfolio";
 const DESCRIPTION = "Sebastian Echeverri is a Full Stack Engineer building scalable web applications with React, Next.js, Node.js, and TypeScript. Explore projects, experience, and contact information.";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  
   title: TITLE,
   description: DESCRIPTION,
   keywords: [
@@ -62,7 +64,7 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
     images: [`${SITE_URL}/social-share.jpg`],
-    creator: "@sebastianEM98",
+    creator: "@SebastianEM98",
   },
 
   appleWebApp: {
