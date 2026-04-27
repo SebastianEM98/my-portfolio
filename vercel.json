@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "sebastianecheverri.vercel.app"
+        }
+      ],
+      "destination": "https://sebastianecheverri.dev/$1",
+      "permanent": true
+    }
+  ]
+}
