@@ -10,13 +10,13 @@ export const About = () => (
             <div className="grid md:grid-cols-2 gap-12 items-start">
                 <AnimatedSection delay={0.1}>
                     <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                        I'm a Full Stack Engineer with experience building scalable SaaS platforms and enterprise systems.
+                        I'm a Full Stack Engineer focused on building production-ready SaaS platforms, analytics systems, and scalable business applications.
                     </p>
                     <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                        I specialize in designing clean architectures, optimizing performance, and translating complex business requirements into reliable, user-focused applications. Throughout my career, I've improved product quality, reduced delivery times, and built systems that support real-world operations at scale.
+                        I specialize in designing clean architectures, building secure backend systems, and translating complex business operations into scalable software. Throughout my career, I've developed systems focused on analytics, operational efficiency, and real-world usability — improving workflows, reducing manual processes, and delivering measurable impact.
                     </p>
                     <p className="text-muted-foreground text-lg leading-relaxed">
-                        Outside of engineering, I'm passionate about sports — especially tennis — which has shaped my mindset around discipline, consistency, and continuous improvement. I bring that same energy into my work: always learning, always iterating, and always looking for better ways to build and collaborate.
+                        Outside of engineering, I'm passionate about sports, especially tennis — which has shaped my mindset around discipline, consistency, and continuous improvement. I bring that same energy into my work: always learning, always iterating, and always looking for better ways to build and collaborate.
                     </p>
                 </AnimatedSection>
 

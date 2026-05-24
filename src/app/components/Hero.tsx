@@ -27,8 +27,7 @@ export const Hero = () => (
 
                 {/* Description */}
                 <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto mb-10 leading-relaxed tracking-tight">
-                    I build scalable SaaS and enterprise web applications with a focus on performance, architecture, and real business impact.
-                    From high-performance frontends to robust APIs — I ship systems that scale and deliver measurable results.
+                    I build production-ready SaaS platforms and scalable web applications focused on analytics, performance, and real-world business operations. From high-performance frontends to secure backend architectures — I create software that scales and drives measurable business impact.
                 </p>
 
                 {/* Buttons */}

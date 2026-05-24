@@ -20,6 +20,6 @@ export const aboutHighlights: AboutHighlight[] = [
     {
         icon: BarChart,
         title: "Engineering Impact",
-        desc: "Focused on delivering measurable results — improving performance, reducing delivery time, and scaling systems."
+        desc: "Focused on building scalable SaaS systems that improve operations, simplify workflows, and deliver measurable business impact."
     }
 ];
