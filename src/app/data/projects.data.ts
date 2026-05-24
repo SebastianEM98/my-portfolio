@@ -2,6 +2,42 @@ import { Project } from "../types";
 
 export const projects: Project[] = [
     {
+        title: "Ganametrics — Livestock Analytics Platform",
+        type: "Production-grade SaaS application",
+        problem:
+            "Cattle farm operations were being managed through notebooks and spreadsheets, making financial tracking, livestock monitoring, and operational reporting difficult to scale.",
+        features: [
+            "Livestock lifecycle management",
+            "Financial reporting & analytics",
+            "Multi-tenant farm isolation",
+            "Role-based admin system",
+        ],
+        highlights: [
+            "Executive dashboard with KPIs & charts",
+            "Secure authentication & email workflows",
+            "Server Actions architecture",
+        ],
+        stack: [
+            "Next.js",
+            "TypeScript",
+            "PostgreSQL",
+            "Prisma",
+            "Auth.js",
+            "Shadcn/ui",
+            "Tailwind CSS",
+        ],
+        liveUrl: "https://ganametrics.com",
+        github: undefined, // Private repo
+        images: [
+            "/projects/ganametrics/dashboard.png",
+            "/projects/ganametrics/cattle-module-cards.png",
+            "/projects/ganametrics/cattle-module-tables.png",
+            "/projects/ganametrics/expenses-module.png",
+            "/projects/ganametrics/reports-module.png",
+            "/projects/ganametrics/inventory-module.png"
+        ],
+    },
+    {
         title: "UpTask — Project & Task Management Platform",
         type: "Full-stack MERN application",
         problem: "Teams needed a powerful way to manage projects and tasks with real-time collaboration, role-based access, and a scalable backend.",
