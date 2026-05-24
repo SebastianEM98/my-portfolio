@@ -10,7 +10,7 @@ export const aboutHighlights: AboutHighlight[] = [
     {
         icon: Layers,
         title: "Full Stack",
-        desc: "React, Node.js, Express, .NET, SQL Server, PostgreSQL, MongoDB — building and scaling systems across the full stack."
+        desc: "Modern full-stack systems with React, Next.js, Node.js, PostgreSQL, .NET, and scalable cloud architectures."
     },
     {
         icon: Code2,
